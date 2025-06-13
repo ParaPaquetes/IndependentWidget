@@ -9,7 +9,7 @@
      */
     var theEndpoint=window.location.href;
     theEndpoint=theEndpoint.split("?endpoint=")[1];
-    console.log(theEndpoint);
+    
     ZOHO.embeddedApp.on("PageLoad", function (data) {
       var id = data.EntityId,
           module = data.Entity;
@@ -18,9 +18,7 @@
         .then(function (data) {
           console.log(data);
           var laId=data.data[0].id;
-          console.log('this one');
-          console.log(window.location.href);
-          //window.location="https://analytics.zoho.com/open-view/2908620000007346736/8f4c3cd40aff2ae8bc882b78ac2432eb?ZOHO_CRITERIA=%22Tipo%20de%20Producto%20por%20Cuenta%22.%22product_id_crm%22%20%3D"+laId;
+          window.location=theEndpoint+laId;
         });
     });
     /*
