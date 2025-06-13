@@ -17,7 +17,9 @@
           console.log(data);
           var laId=data.data[0].id;
           var theEndpoint=window.location.href;
+          alert(theEndpoint);
           theEndpoint=theEndpoint.split("?endpoint=")[1];
+          alert(theEndpoint);
           window.location=theEndpoint+laId;
         });
     });
