@@ -7,7 +7,9 @@
     /*
      * Subscribe to the EmbededApp onPageLoad event before initializing
      */
-    console.log(window.location.href);
+    var theEndpoint=window.location.href;
+    theEndpoint=theEndpoint.split("?endpoint=")[1];
+    console.log(theEndpoint);
     ZOHO.embeddedApp.on("PageLoad", function (data) {
       var id = data.EntityId,
           module = data.Entity;
