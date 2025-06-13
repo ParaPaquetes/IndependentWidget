@@ -7,8 +7,6 @@
     /*
      * Subscribe to the EmbededApp onPageLoad event before initializing
      */
-    var theEndpoint=window.location.href;
-    theEndpoint=theEndpoint.split("?endpoint=")[1];
     
     ZOHO.embeddedApp.on("PageLoad", function (data) {
       var id = data.EntityId,
@@ -18,6 +16,8 @@
         .then(function (data) {
           console.log(data);
           var laId=data.data[0].id;
+          var theEndpoint=window.location.href;
+          theEndpoint=theEndpoint.split("?endpoint=")[1];
           window.location=theEndpoint+laId;
         });
     });
